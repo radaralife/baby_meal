@@ -69,8 +69,8 @@ const MealPlan = ({ mealPlan, babyMonth, stage, onRegeneratePlan, onMealSave, on
                   {badCombinationWarning && <Alert variant="warning">{badCombinationWarning}</Alert>}
                   {allergenWarning && <Alert variant="danger">{allergenWarning}</Alert>}
                 </Card.Body>
-                <Card.Footer className="d-flex justify-content-end">
-                {!isRecipeTab && <Button variant="success" onClick={() => onMealSave(meal)}>저장</Button>}
+                <Card.Footer>
+                  {!isRecipeTab && <Button onClick={() => onMealSave(meal)}>저장</Button>}
                   {isRecipeTab && <Button variant="danger" onClick={() => onMealDelete(meal)}>삭제</Button>}
                 </Card.Footer>
               </Card>
@@ -80,7 +80,7 @@ const MealPlan = ({ mealPlan, babyMonth, stage, onRegeneratePlan, onMealSave, on
       </Row>
       {!isRecipeTab ? (
         <div className="d-flex justify-content-center mt-3">
-          <Button className="floating" variant="primary" onClick={onRegeneratePlan}>
+          <Button variant="primary" onClick={onRegeneratePlan}>
             식단표 다시 생성
           </Button>
         </div>
@@ -247,7 +247,7 @@ const FoodSelectionForm = ({ onFormSubmit }) => {
             xmax={5}
             onChange={({ x }) => setSelectedMenuCount(x)}
           />
-          <div>선택된 조합 식재료 종류: {selectedMenuCount}</div>
+          <div>선택된 조합 메뉴 개수: {selectedMenuCount}</div>
         </Form.Group>
       )}
 

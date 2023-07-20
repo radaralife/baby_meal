@@ -1,38 +1,115 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-color: #b2ebf2; /* Light Blue */
 }
 
-.App-link {
-  color: #61dafb;
+.form-input {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  background-color: #ffffff; /* White */
+  border: 1px solid #cfd8dc; /* Light Grey */
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-input .btn {
+  width: 100%;
+  background-color: #ff7043; /* Light Orange */
+  border-color: #ff7043; /* Light Orange */
+}
+
+.form-input .btn:focus,
+.form-input .btn:active,
+.form-input .btn:hover {
+  background-color: #ff7043; /* Orange */
+  border-color: #ff7043; /* Orange */
+}
+
+.result-display {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #cfd8dc; /* Light Grey */
+  border-radius: 5px;
+  background-color: #e0f7fa; /* Lightest Blue */
+}
+
+
+@keyframes fadeout {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.fade-out {
+  animation-name: fadeout;
+  animation-duration: 2s;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.container {
+  background-color: #fff3e0; /* Light Orange */
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #ff7043; /* Orange */
+}
+
+.table {
+  background-color: #ffffff; /* White */
+}
+
+.table th, .table td {
+  border: none;
+}
+
+.table th {
+  color: #ff7043; /* Orange */
+  text-align: center;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.padded-top {
+  padding-top: 20px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);  /* Add this line */
+}
+
+
+.fixed-bottom-navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.fixed-bottom-navbar .nav-link {
+  font-size: 1.5rem;
+  padding: 10px 0;
+}
+
+.d-flex {
+  margin-bottom: 60px; /* Add this line */
+}
+.floating {
+  animation-name: floating;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  from { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 10px); }
+  to   { transform: translate(0, -0px); }    
 }
