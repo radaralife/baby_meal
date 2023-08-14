@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import Slider from 'react-input-slider';
-import Confetti from 'react-confetti';
+
 import { Card } from 'react-bootstrap';
 import { Alert } from 'react-bootstrap';
 import { Navbar, Nav } from 'react-bootstrap';
 
-import badCombinationMeat from './data/badCombinationMeat.json';
-import allergenVeggies from './data/allergenVeggies.json';
-import ingredients from './data/ingredients.json';
+import badCombinationMeat from './badCombinationMeat.json';
+import allergenVeggies from './allergenVeggies.json';
+import ingredients from './ingredients.json';
 
 const BottomNavbar = ({ onRecipeClick }) => {
   return (
@@ -62,7 +62,7 @@ const MealPlan = ({ mealPlan, babyMonth, stage, onRegeneratePlan, onMealSave, on
             <Col>
               <Card>
                 <Card.Body>
-                  <Card.Title>메뉴 {index + 1}: {meal.slice(0, 2).map(item => item.ingredient).join(' ')} 미음</Card.Title>
+                  <Card.Title>메뉴 {index + 1}: {meal.slice(0, 2).map(item => item.ingredient).join(' ')} </Card.Title>
                   <Card.Text>
                   식재료: {meal.filter(item => item.ingredient !== undefined).map(item => `${item.ingredient} (${item.category})`).join(', ')}
                   </Card.Text>
@@ -274,7 +274,7 @@ const FoodSelectionForm = ({ onFormSubmit }) => {
 
 const App = () => {
   const [isRecipeTab, setIsRecipeTab] = useState(false);
-  const [showConfetti, setShowConfetti] = useState(false);
+  const [setShowConfetti] = useState(false);
   const [dietPlan, setDietPlan] = useState(null);
   const handleMealSave = (meal) => {
     // Save the meal to localStorage
